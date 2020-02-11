@@ -1,0 +1,19 @@
+Package: rsformat
+Type: Package
+Title: Slimmed-down alternative to rmarkdown::html_document
+Version: 0.1.0
+Authors@R: c(
+    person("Joe", "Cheng", role = c("aut", "cre"), email = "joe@rstudio.com"),
+    person(family = "RStudio", role = "cph"),
+    person(family = "Bootstrap contributors", role = "ctb",
+      comment = "Bootstrap library")
+    )
+Description: Provides a document format similar to rmarkdown::html_document but
+    with a slimmed-down Bootstrap derivative instead of the real thing.
+Imports:
+    rmarkdown,
+    htmltools
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
