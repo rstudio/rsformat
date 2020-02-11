@@ -35,6 +35,7 @@ rstrap_document <- function(toc = FALSE,
   code_download = FALSE,
   smart = TRUE,
   self_contained = TRUE,
+  theme = NULL,
   highlight = "default",
   mathjax = "default",
   template = "default",
@@ -47,6 +48,13 @@ rstrap_document <- function(toc = FALSE,
   pandoc_args = NULL,
   ...
 ) {
+
+  if (!is.null(theme)) {
+    stop(call. = FALSE,
+      "The `rsformat::rstrap_document` output format does not support the ",
+      "`theme` argument"
+    )
+  }
 
   if (!"bootstrap_version" %in% names(formals(rmarkdown::html_document_base))) {
     stop(call. = FALSE,
