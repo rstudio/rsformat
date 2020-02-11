@@ -3,8 +3,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Provides a document format similar to rmarkdown::html_document but
-with a slimmed-down Bootstrap derivative instead of the real thing.
+Provides a document format similar to `rmarkdown::html_document`, but
+with a slimmed-down Bootstrap 4 derivative instead of the real thing.
 
 ## Installation
 
