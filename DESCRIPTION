@@ -14,7 +14,7 @@ Imports:
     rmarkdown (>= 2.1.1),
     htmltools
 Remotes:
-    rstudio/rmarkdown@carson/feature/bs4
+    cpsievert/rmarkdown@carson/feature/bs4
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
