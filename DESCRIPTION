@@ -11,10 +11,13 @@ Authors@R: c(
 Description: Provides a document format similar to rmarkdown::html_document but
     with a slimmed-down Bootstrap derivative instead of the real thing.
 Imports:
+    utils,
     rmarkdown (>= 2.1.1),
-    htmltools
+    htmltools,
+    jquerylib
 Remotes:
-    cpsievert/rmarkdown@carson/feature/bs4
+    cpsievert/rmarkdown@carson/feature/bs4,
+    rstudio/jquerylib
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

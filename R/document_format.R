@@ -3,7 +3,7 @@ html_dependencies_rstrap <- function() {
     jquerylib::jquery_core(3),
     htmltools::htmlDependency(
       "rstrap",
-      packageVersion("rsformat"),
+      utils::packageVersion("rsformat"),
       "rstrap",
       package = "rsformat",
       stylesheet = "rstrap.css",
@@ -19,6 +19,16 @@ html_dependencies_rstrap <- function() {
   )
 }
 
+#' HTML document format with a slim Bootstrap 4-derived theme
+#'
+#' A substitute for the [rmarkdown::html_document()] format which uses a slimmed
+#' down version of Bootstrap 4. All arguments below behave the same as their
+#' [rmarkdown::html_document()] equivalents.
+#'
+#' @inheritParams rmarkdown::html_document
+#'
+#' @seealso rmarkdown::html_document
+#'
 #' @export
 rstrap_document <- function(toc = FALSE,
   toc_depth = 3,
