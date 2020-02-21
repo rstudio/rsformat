@@ -61,7 +61,7 @@ rstrap_document <- function(toc = FALSE,
 
   if (!is.null(theme)) {
     stop(call. = FALSE,
-      "The `rsformat::rstrap_document` output format does not support the ",
+      "The `rstrap_document` output format does not support the ",
       "`theme` argument"
     )
   }
@@ -70,7 +70,7 @@ rstrap_document <- function(toc = FALSE,
     stop(call. = FALSE,
       "The `rstrap_document` output format requires a newer version of ",
       "the `rmarkdown` package (try ",
-      "`remotes::install_github(\"cpsievert/rmarkdown@carson/feature/bs4\")`).",
+      "`renv::install(\"rstudio/rmarkdown#1706\")`).",
       " Some document features may not work properly."
     )
   }
