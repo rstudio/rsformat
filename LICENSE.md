@@ -1,6 +1,8 @@
 # MIT License
 
 Copyright (c) 2020 RStudio, PBC
+Copyright (c) 2011-2020 Twitter, Inc.
+Copyright (c) 2011-2020 The Bootstrap Authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

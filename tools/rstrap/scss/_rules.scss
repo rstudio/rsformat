@@ -1,0 +1,35 @@
+// Google font
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Source+Code+Pro:400,700&display=swap');
+
+// Formatting for R Markdown code and output chunks
+
+pre[class] {
+  background-color: $light;
+}
+
+pre {
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+  padding: $code-spacer-y $code-spacer-x;
+}
+
+pre code {
+  background-color: inherit;
+}
+
+
+
+// Make sure starting text doesn't run up against top of document;
+// we can't just add padding to the top of the document because it
+// might want a navbar to be flush against the top
+
+body > {
+  h1, h2, h3, h4, h5, h6, p {
+    margin-top: $spacer;
+  }
+}
+
+.container-fluid {
+  @extend .container;
+}
