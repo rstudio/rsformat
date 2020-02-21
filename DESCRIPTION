@@ -16,7 +16,7 @@ Imports:
     htmltools,
     jquerylib
 Remotes:
-    cpsievert/rmarkdown@carson/feature/bs4,
+    rstudio/rmarkdown#1706,
     rstudio/jquerylib
 License: MIT + file LICENSE
 Encoding: UTF-8
