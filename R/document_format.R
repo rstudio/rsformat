@@ -1,6 +1,8 @@
 html_dependencies_rstrap <- function() {
   list(
+    # use last jquery
     jquerylib::jquery_core(3),
+    # custom deps forked from boostrap
     htmltools::htmlDependency(
       "rstrap",
       utils::packageVersion("rsformat"),
@@ -10,6 +12,8 @@ html_dependencies_rstrap <- function() {
       script = "rstrap.js",
       all_files = FALSE
     ),
+    # this is required so another bootstrap deps is not used.
+    # this is to trick htmltools::resolveDependencies() in keeping this dummy one.
     htmltools::htmlDependency(
       "bootstrap",
       "99999.0.0",
@@ -27,7 +31,11 @@ html_dependencies_rstrap <- function() {
 #'
 #' @inheritParams rmarkdown::html_document
 #'
-#' @seealso rmarkdown::html_document
+#' @seealso [rmarkdown::html_document()]
+#' @param theme `NULL`. For this format, it can't be set to another value or it
+#'   will error.
+#' @param css CSS and/or Sass files to include. Files with an extension of .sass
+#' or .scss are compiled to CSS via `sass::sass()`.
 #'
 #' @export
 rstrap_document <- function(toc = FALSE,
@@ -66,23 +74,13 @@ rstrap_document <- function(toc = FALSE,
     )
   }
 
-  if (!"bootstrap_version" %in% names(formals(rmarkdown::html_document_base))) {
-    stop(call. = FALSE,
-      "The `rstrap_document` output format requires a newer version of ",
-      "the `rmarkdown` package (try ",
-      "`renv::install(\"rstudio/rmarkdown#1706\")`).",
-      " Some document features may not work properly."
-    )
-  }
-
   extra_dependencies <- c(
     html_dependencies_rstrap(),
     extra_dependencies
   )
 
   rmarkdown::html_document(
-    bootstrap_version = "4",
-
+    theme = list(version = 4),
     toc = toc,
     toc_depth = toc_depth,
     toc_float = toc_float,

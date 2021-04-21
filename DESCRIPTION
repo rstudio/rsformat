@@ -4,6 +4,7 @@ Title: Slimmed-down alternative to rmarkdown::html_document
 Version: 0.1.0
 Authors@R: c(
     person("Joe", "Cheng", role = c("aut", "cre"), email = "joe@rstudio.com"),
+    person("christophe", "Dervieux", role = c("ctb"), email = "cderv@rstudio.com"),
     person(family = "RStudio", role = "cph"),
     person(family = "Bootstrap contributors", role = "ctb",
       comment = "Bootstrap library")
@@ -12,13 +13,11 @@ Description: Provides a document format similar to rmarkdown::html_document but
     with a slimmed-down Bootstrap derivative instead of the real thing.
 Imports:
     utils,
-    rmarkdown (>= 2.1.1),
+    rmarkdown (>= 2.7),
     htmltools,
     jquerylib
-Remotes:
-    rstudio/rmarkdown#1706,
-    rstudio/jquerylib
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
