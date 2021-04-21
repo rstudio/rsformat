@@ -31,7 +31,11 @@ html_dependencies_rstrap <- function() {
 #'
 #' @inheritParams rmarkdown::html_document
 #'
-#' @seealso rmarkdown::html_document
+#' @seealso [rmarkdown::html_document()]
+#' @param theme `NULL`. For this format, it can't be set to another value or it
+#'   will error.
+#' @param css CSS and/or Sass files to include. Files with an extension of .sass
+#' or .scss are compiled to CSS via `sass::sass()`.
 #'
 #' @export
 rstrap_document <- function(toc = FALSE,

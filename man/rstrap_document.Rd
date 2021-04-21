@@ -46,8 +46,8 @@ options that control the behavior of the floating table of contents. See the
 
 \item{number_sections}{\code{TRUE} to number section headings}
 
-\item{section_divs}{Wrap sections in <div> tags, and attach identifiers to the
-enclosing <div> rather than the header itself.}
+\item{section_divs}{Wrap sections in \code{<div>} tags, and attach identifiers to the
+enclosing \code{<div>} rather than the header itself.}
 
 \item{fig_width}{Default width (in inches) for figures}
 
@@ -73,7 +73,9 @@ method creates a paginated HTML table (note that this method is only valid
 for formats that produce HTML). In addition to the named methods you can
 also pass an arbitrary function to be used for printing data frames. You
 can disable the \code{df_print} behavior entirely by setting the option
-\code{rmarkdown.df_print} to \code{FALSE}.}
+\code{rmarkdown.df_print} to \code{FALSE}. See
+\href{https://bookdown.org/yihui/rmarkdown/html-document.html#data-frame-printing}{Data
+frame printing section} in bookdown book for examples.}
 
 \item{code_folding}{Enable document readers to toggle the display of R code
 chunks. Specify \code{"none"} to display all code chunks (assuming
@@ -85,27 +87,14 @@ chunks by default.}
 \item{code_download}{Embed the Rmd source code within the document and provide
 a link that can be used by readers to download the code.}
 
-\item{smart}{Produce typographically correct output, converting straight
-quotes to curly quotes, \code{---} to em-dashes, \code{--} to en-dashes, and
-\code{...} to ellipses.}
-
 \item{self_contained}{Produce a standalone HTML file with no external
 dependencies, using data: URIs to incorporate the contents of linked
 scripts, stylesheets, images, and videos. Note that even for self contained
 documents MathJax is still loaded externally (this is necessary because of
 its size).}
 
-\item{theme}{Visual theme ("default", "cerulean", "cosmo", "cyborg", "darkly",
-"flatly", "journal", "lumen", "readable", "sandstone", "simplex", "slate",
-"spacelab", "superhero", "united", or "yeti"). Pass \code{NULL} for no
-theme (in this case you can use the \code{css} parameter to add your own styles).
-If Bootstrap 4+ is used (see \code{bootstrap_version} argument),
-a handful of other themes are available ("lux", "minty", "pulse",
-"sketchy", and "solar"). Moreover, with Bootstrap 4+, custom
-\href{https://getbootstrap.com/docs/4.0/getting-started/theming/}{Bootstrap
-themes} are supported via the \code{bs_theme_add_variables()} and
-\code{bs_theme_add()} functions from the bootstraplib package
-(use these functions from within the document).}
+\item{theme}{\code{NULL}. For this format, it can't be set to another value or it
+will error.}
 
 \item{highlight}{Syntax highlighting style. Supported styles include
 "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn",
@@ -126,7 +115,8 @@ more details).}
 \item{extra_dependencies}{Additional function arguments to pass to the
 base R Markdown HTML output formatter \code{\link[rmarkdown]{html_document_base}}}
 
-\item{css}{One or more css files to include}
+\item{css}{CSS and/or Sass files to include. Files with an extension of .sass
+or .scss are compiled to CSS via \code{sass::sass()}.}
 
 \item{includes}{Named list of additional content to include within the
 document (typically created using the \code{\link[rmarkdown]{includes}} function).}
@@ -147,10 +137,10 @@ additional details.}
 base R Markdown HTML output formatter \code{\link[rmarkdown]{html_document_base}}}
 }
 \description{
-A substitute for the [rmarkdown::html_document()] format which uses a slimmed
+A substitute for the \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}} format which uses a slimmed
 down version of Bootstrap 4. All arguments below behave the same as their
-[rmarkdown::html_document()] equivalents.
+\code{\link[rmarkdown:html_document]{rmarkdown::html_document()}} equivalents.
 }
 \seealso{
-rmarkdown::html_document
+\code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}
 }
