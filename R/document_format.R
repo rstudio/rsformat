@@ -1,6 +1,8 @@
 html_dependencies_rstrap <- function() {
   list(
+    # use last jquery
     jquerylib::jquery_core(3),
+    # custom deps forked from boostrap
     htmltools::htmlDependency(
       "rstrap",
       utils::packageVersion("rsformat"),
@@ -10,6 +12,8 @@ html_dependencies_rstrap <- function() {
       script = "rstrap.js",
       all_files = FALSE
     ),
+    # this is required so another bootstrap deps is not used.
+    # this is to trick htmltools::resolveDependencies() in keeping this dummy one.
     htmltools::htmlDependency(
       "bootstrap",
       "99999.0.0",
