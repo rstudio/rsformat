@@ -66,23 +66,13 @@ rstrap_document <- function(toc = FALSE,
     )
   }
 
-  if (!"bootstrap_version" %in% names(formals(rmarkdown::html_document_base))) {
-    stop(call. = FALSE,
-      "The `rstrap_document` output format requires a newer version of ",
-      "the `rmarkdown` package (try ",
-      "`renv::install(\"rstudio/rmarkdown#1706\")`).",
-      " Some document features may not work properly."
-    )
-  }
-
   extra_dependencies <- c(
     html_dependencies_rstrap(),
     extra_dependencies
   )
 
   rmarkdown::html_document(
-    bootstrap_version = "4",
-
+    theme = list(version = 4),
     toc = toc,
     toc_depth = toc_depth,
     toc_float = toc_float,
