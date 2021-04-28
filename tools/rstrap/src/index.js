@@ -19,16 +19,16 @@ import Util from 'bootstrap/js/src/util'
  */
 
 export {
-  Util,
-  // Alert,
-  // Button,
-  // Carousel,
-  Collapse,
-  Dropdown,
-  // Modal,
-  // Popover,
-  // Scrollspy,
-  Tab,
-  // Toast,
-  // Tooltip
+    Util,
+    // Alert,
+    // Button,
+    // Carousel,
+    Collapse,
+    Dropdown,
+    // Modal,
+    // Popover,
+    // Scrollspy,
+    Tab,
+    // Toast,
+    // Tooltip
 }
