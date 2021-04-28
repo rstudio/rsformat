@@ -6,8 +6,7 @@ set -x
 cd "$(dirname $0)"
 
 cd rstrap
-nvm install
-nvm use
+# nvm use
 npm install
 make clean
 make
