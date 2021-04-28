@@ -1,16 +1,18 @@
 ---
 title: "Example 1"
 output:
+  html_document:
+    self_contained: false
+    theme: !expr bslib::bs_remove(bslib::bs_theme(version = 4), "bs3compat")
   rsformat::rstrap_document:
-    toc: true
-    number_sections: true
+    self_contained: false
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# About R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -39,3 +41,19 @@ Content 1
 ### Tab 2
 
 Content 2
+
+## Other features 
+
+### Some math
+
+$$
+z = x/y + \alpha
+$$
+
+## Some rstrap feature still available for Bootstrap
+
+### Buttons 
+
+```{r, echo = FALSE}
+htmltools::tags$button(type = "button", class = "btn btn-primary", "Primary")
+```
