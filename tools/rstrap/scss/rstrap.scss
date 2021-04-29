@@ -1,11 +1,10 @@
 @import "defaults";
-
+@import "defaults_bs3_compat";
 @import "functions";
 @import "variables";
-
 @import "declarations";
-
 @import "mixins";
+@import "declarations_bs3_compat";
 @import "root";
 @import "reboot";
 @import "type";
@@ -40,5 +39,5 @@
 // @import "spinners";
 @import "utilities";
 @import "print";
-
-@import "_rules";
+@import "rules_bs3_compat";
+@import "rules";

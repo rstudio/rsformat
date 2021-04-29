@@ -4,6 +4,7 @@ dist/rstrap.css: $(wildcard scss/*.scss)
 	@mkdir -p dist
 	node_modules/.bin/node-sass \
 	  --include-path=node_modules/bootstrap/scss \
+	  --include-path=bs3compat \
 		--output-style=compressed scss/rstrap.scss \
 		> dist/rstrap.css
 
