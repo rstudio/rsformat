@@ -24,7 +24,6 @@ render_base <- function(...) {
 
 render_rstrap(self_contained = FALSE)
 render_base(theme = list(version = 4), self_contained = FALSE)
-
 # what happens if we don't have bs3compat file from bslib.
 render_base(theme = bslib::bs_remove(bslib::bs_theme(version = 4), "bs3compat"), self_contained = FALSE)
 
@@ -32,7 +31,26 @@ render_base(theme = bslib::bs_remove(bslib::bs_theme(version = 4), "bs3compat"),
 
 render_rstrap(toc = TRUE)
 render_rstrap(toc = TRUE, toc_float = TRUE)
-render_rstrap(toc = TRUE, toc_float = list(collapsed = FALSE, smooth_scroll = FALSE, print = FALSE))
+render_rstrap(
+  toc = TRUE,
+  toc_float = list(
+    collapsed = FALSE,
+    smooth_scroll = FALSE,
+    print = FALSE
+  )
+)
+render_rstrap(toc = TRUE,
+              toc_float = TRUE,
+              theme = list(version = 4))
+render_rstrap(
+  toc = TRUE,
+  toc_float = list(
+    collapsed = FALSE,
+    smooth_scroll = FALSE,
+    print = FALSE
+  ),
+  theme = list(version = 4)
+)
 
 # Number section ----------------------------------------------------------
 
