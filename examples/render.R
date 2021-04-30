@@ -89,5 +89,4 @@ with_navbar <- function(expr, nav_yml = "examples/_navbar.yml") {
 }
 
 with_navbar(render_rstrap(self_contained = FALSE))
-with_navbar(render_base())
 with_navbar(render_base(theme = list(version = 4), self_contained = FALSE))
