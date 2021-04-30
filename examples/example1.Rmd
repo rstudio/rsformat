@@ -3,7 +3,8 @@ title: "Example 1"
 output:
   html_document:
     self_contained: false
-    theme: !expr bslib::bs_remove(bslib::bs_theme(version = 4), "bs3compat")
+    theme: 
+      version: 4
   rsformat::rstrap_document:
     self_contained: false
 ---
