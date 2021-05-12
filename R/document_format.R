@@ -19,6 +19,12 @@ html_dependencies_rstrap <- function() {
       "99999.0.0",
       tempdir(),
       all_files = FALSE
+    ),
+    htmltools::htmlDependency(
+      "bs3compat",
+      "999999.0.0",
+      tempdir(),
+      all_files = FALSE
     )
   )
 }
