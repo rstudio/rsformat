@@ -30,7 +30,9 @@ render_base(theme = bslib::bs_remove(bslib::bs_theme(version = 4), "bs3compat"),
 # TOC ---------------------------------------------------------------------
 
 render_rstrap(toc = TRUE)
+render_base(theme = list(version = 4), toc = TRUE)
 render_rstrap(toc = TRUE, toc_float = TRUE)
+render_base(theme = list(version = 4), toc = TRUE, toc_float = TRUE)
 render_rstrap(
   toc = TRUE,
   toc_float = list(
@@ -39,22 +41,21 @@ render_rstrap(
     print = FALSE
   )
 )
-render_rstrap(toc = TRUE,
-              toc_float = TRUE,
-              theme = list(version = 4))
-render_rstrap(
+render_base(
+  theme = list(version = 4),
   toc = TRUE,
   toc_float = list(
     collapsed = FALSE,
     smooth_scroll = FALSE,
     print = FALSE
-  ),
-  theme = list(version = 4)
+  )
 )
 
 # Number section ----------------------------------------------------------
 
 render_rstrap(number_sections = TRUE)
+render_base(number_sections = TRUE)
+render_base(theme = list(version = 4), number_sections = TRUE)
 
 # Code folding ------------------------------------------------------------
 
@@ -65,6 +66,7 @@ render_base(code_folding = "show", self_contained = FALSE, theme = list(version 
 
 render_rstrap(code_download = TRUE, self_contained = FALSE)
 render_base(code_download = TRUE, theme = list(version = 4), self_contained = FALSE)
+# without bs3compat, we loose style
 render_base(code_download = TRUE, theme = bslib::bs_remove(bslib::bs_theme(version = 4), "bs3compat"), self_contained = FALSE)
 
 # Anchor sections ---------------------------------------------------------
@@ -88,9 +90,6 @@ with_navbar <- function(expr, nav_yml = "examples/_navbar.yml") {
   force(expr)
 }
 
-rmarkdown::render("examples/example1.Rmd",
-                  output_format = format(...),
-                  output_file = output_file
 with_navbar({
   rmarkdown::render("examples/index.Rmd",
                     output_format = rsformat::rstrap_document(self_contained = FALSE)
@@ -100,7 +99,7 @@ with_navbar({
 with_navbar({
   rmarkdown::render("examples/index.Rmd",
                     output_format = rmarkdown::html_document(theme = list(version = 4),
-                                                  self_contained = FALSE)
+                                                             self_contained = FALSE)
   )
   render_base(theme = list(version = 4), self_contained = FALSE)
-  })
+})
