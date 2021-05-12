@@ -88,5 +88,19 @@ with_navbar <- function(expr, nav_yml = "examples/_navbar.yml") {
   force(expr)
 }
 
-with_navbar(render_rstrap(self_contained = FALSE))
-with_navbar(render_base(theme = list(version = 4), self_contained = FALSE))
+rmarkdown::render("examples/example1.Rmd",
+                  output_format = format(...),
+                  output_file = output_file
+with_navbar({
+  rmarkdown::render("examples/index.Rmd",
+                    output_format = rsformat::rstrap_document(self_contained = FALSE)
+  )
+  render_rstrap(self_contained = FALSE)
+  })
+with_navbar({
+  rmarkdown::render("examples/index.Rmd",
+                    output_format = rmarkdown::html_document(theme = list(version = 4),
+                                                  self_contained = FALSE)
+  )
+  render_base(theme = list(version = 4), self_contained = FALSE)
+  })
